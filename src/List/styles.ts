@@ -105,6 +105,21 @@ export const Img = styled('img')`
 	width: 100px;
 `;
 
+export const Form = styled('div')`
+	padding: 20px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+	label {
+		width: 200px;
+		font-size: 14px;
+		margin-right: 5px;
+	}
+	div {
+		margin: 10px;
+	}
+`;
 export const Button = styled('button')`
 	width: 100px;
 	height: 30px;

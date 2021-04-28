@@ -37,7 +37,7 @@ export const List: FC<any> = () => {
 					</Col>
 				</TableHeader>
 				{cars.map((item, index) => (
-					<Item item={item} key={index} />
+					<Item item={item} key={index} updateData={getData} />
 				))}
 			</Table>
 		</Container>

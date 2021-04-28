@@ -34,7 +34,7 @@ export default class IndexController {
 	};
 
 	public updateCar = async (req: Request, res: Response) => {
-		const { idCar, name, estimatedate } = req.body,
+		const { idCar, name, estimatedate, maintenance } = req.body,
 			{ id } = req.params;
 
 		if (id && idCar && name && estimatedate) {
@@ -42,7 +42,7 @@ export default class IndexController {
 				id: idCar,
 				name,
 				estimatedate,
-				inMaintenance: true
+				inMaintenance: maintenance || false
 			};
 			const { data, error } = await this.service.updateCar(id, car);
 			if (error) return mongoError(error, res);

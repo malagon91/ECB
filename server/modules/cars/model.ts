@@ -1,7 +1,7 @@
 import { Document, Model } from 'mongoose';
 
 export interface ICar {
-	id: number;
+	id: string;
 	estimatedate?: Date;
 	image: string;
 	model: string;
@@ -14,7 +14,7 @@ export interface ICar {
 export interface ICarUpdate {
 	name: string;
 	estimatedate: Date;
-	id: number;
+	id: string;
 	inMaintenance: boolean;
 }
 
