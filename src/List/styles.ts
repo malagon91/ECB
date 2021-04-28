@@ -76,3 +76,8 @@ export const Img = styled('img')`
 	border-radius: 50%;
 	width: 100px;
 `;
+
+export const Button = styled('button')`
+	border-radius: 50%;
+	width: 100px;
+`;

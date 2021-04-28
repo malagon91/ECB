@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Container, Table, TableHeader, TableRow, Col } from './styles';
+import { Container, Table, TableHeader, Col } from './styles';
 import { Item } from './Item';
 import { data } from '../info';
 export const List: FC<any> = () => (

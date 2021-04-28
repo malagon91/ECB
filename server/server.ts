@@ -4,10 +4,19 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import path from 'path';
 import IndexRoutes from './routes';
+import config from '../scripts/config';
+const envs = {
+	dev: 'DEVELOPMENT',
+	prod: 'PRODUCTION'
+};
 
 class App {
 	public app: express.Application;
-	public mongoUrl: string = 'mongodb://localhost/dev';
+	private env = process.env.NODE_ENV;
+	private isProd = this.env === envs.prod;
+	public mongoUrl: string = this.isProd
+		? config.mongoUrl.prod
+		: config.mongoUrl.dev;
 	private index_routes = new IndexRoutes();
 
 	constructor() {
