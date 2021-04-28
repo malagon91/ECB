@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TableRow, Col, Img } from './styles';
+import { TableRow, Col, Img, Button } from './styles';
 
 interface iItem {
 	description?: string;
@@ -8,21 +8,22 @@ interface iItem {
 	estimatedate?: string;
 	id?: number;
 	image?: string;
+	inMaintenance?: boolean;
 }
 interface iProps {
 	item: iItem;
 }
 
 export const Item: FC<iProps> = ({ item }) => (
-	<TableRow>
+	<TableRow inMaintenance={item.inMaintenance}>
 		<Col number={1}>{`${item.id} (${item.model})`}</Col>
-		<Col number={2}>
+		<Col number={2}>{item.estimatedate}</Col>
+		<Col number={3}>
 			<Img src={item.image} />
 		</Col>
-		<Col number={3}>
-			<h1>{item.estimatedate}</h1>
-			<p>{item.description}</p>
+		<Col number={4}>{item.description}</Col>
+		<Col number={5}>
+			<Button>Update</Button>
 		</Col>
-		<Col number={4}>button</Col>
 	</TableRow>
 );
