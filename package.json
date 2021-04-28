@@ -6,8 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=prod ts-node server/index.ts",
     "dev": "cross-env NODE_ENV=prod  nodemon -x ts-node server/index.ts",
-    "init": "cross-env NODE_ENV=prod webpack -w --color --progress",
-    "build": " NODE_ENV=prod npm run init && npm run start"
+    "build": "cross-env NODE_ENV=prod webpack -p ",
+    "init": " NODE_ENV=prod npm run init && npm run start"
   },
   "repository": {
     "type": "git",
